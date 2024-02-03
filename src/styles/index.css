@@ -1,0 +1,7 @@
+@import './content.css';
+@import './navbar.css';
+
+* {
+  margin: 0;
+  color: #333;
+}
