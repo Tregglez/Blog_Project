@@ -1,5 +1,7 @@
 @import './content.css';
 @import './navbar.css';
+@import './blog-content.css';
+@import './create.css';
 
 * {
   margin: 0;

@@ -6,7 +6,6 @@ const useFetch = (url) => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // useTimeout makes it slower (for testing purposes only, dont leave it in final version)
   useEffect(() => {
     const abortCont = new AbortController();
 
