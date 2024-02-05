@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Create from './components/Create';
 import BlogDetails from './components/BlogDetails';
 import Login from './components/Login';
+import NotFound from './components/NotFound';
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
             </Route>
             <Route path="/admin/login/samsara">
               <Login />
+            </Route>
+            <Route path="*">
+              <NotFound />
             </Route>
           </Switch>
         </div>
