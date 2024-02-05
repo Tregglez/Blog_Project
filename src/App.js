@@ -23,7 +23,7 @@ function App() {
             <Route path="/blogs/:id">
               <BlogDetails />
             </Route>
-            <Route path="/admin/login/samsara">
+            <Route path="/admin-login/samsara">
               <Login />
             </Route>
             <Route path="*">
