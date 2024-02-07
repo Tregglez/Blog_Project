@@ -1,0 +1,25 @@
+.title {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
+.small-nav {
+  text-align: center;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+}
+
+.title-link {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  padding: 2px 40px;
+  border: 1px solid black;
+  border-radius: 15px;
+  margin: 0 60px;
+  text-decoration: none;
+}

@@ -3,6 +3,7 @@
 @import './blog-content.css';
 @import './create.css';
 @import './logins.css';
+@import './home.css';
 
 * {
   margin: 0;

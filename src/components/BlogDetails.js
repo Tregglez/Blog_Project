@@ -1,32 +1,40 @@
 import { useParams } from "react-router-dom";
-import useFetch from "../useFetch";
-import { useHistory } from "react-router-dom";
+import { useEffect, useState } from "react";
+import supabase from "../config/supabaseClient";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 function BlogDetails() {
   const { id } = useParams();
-  const { data: blog, error, isLoading } = useFetch('http://localhost:8000/blogs/' + id);
-  const history = useHistory();
+  const navigate = useHistory();
 
-  const handleClick = () => {
-    fetch('http://localhost:8000/blogs/' + blog.id, {
-      method: 'DELETE'
-    }).then(() => {
-      history.push('/');
-    });
-  };
+  const [title, setTitle] = useState('');
+  const [body, setBody] = useState('');
+
+  useEffect(() => {
+    const fetchPost = async () => {
+      const { data, error } = await supabase
+        .from('posts')
+        .select()
+        .eq('id', id)
+        .single();
+
+      if (error) {
+        navigate.push('/', { replace: true });
+      }
+      if (data) {
+        setTitle(data.title);
+        setBody(data.body);
+      }
+    };
+
+
+    fetchPost();
+  }, [id, navigate]);
 
   return (
     <div className="blog-details">
-      {isLoading && <div>Loading...</div>}
-      {error && <div>{error}</div>}
-      {blog && (
-        <article>
-          <h2>{blog.title}</h2>
-          <p>Written by {blog.author}</p>
-          <div>{blog.body}</div>
-          <button onClick={handleClick}>delete</button>
-        </article>
-      )}
+      <h2>{title}</h2>
+      <div>{body}</div>
     </div>
   );
 }
