@@ -1,3 +1,7 @@
+.blog-details {
+  min-height: 60vh; /* make the footer stay at the bottom */
+}
+
 .blog-details h2 {
   font-size: 20px;
   margin-bottom: 10px;

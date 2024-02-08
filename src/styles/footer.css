@@ -1,8 +1,9 @@
 .footer {
   text-align: center;
-    padding: 40px 50px; /* Vertical padding and horizontal padding for width */
+    padding: 40px 50px 10px 50px; /* Vertical padding and horizontal padding for width */
   background-color: #ffffff;
   position: relative;
+  font-style: italic;   /* Apply italic font style */
 }
 
 .footer::before {
@@ -38,4 +39,9 @@
   font-size: 0.75em;
   margin-top: 80px; /* Space between the links and the copyright text */
   z-index: 2;
+}
+
+.privacy {
+  display: flex;
+  padding: 5px;
 }

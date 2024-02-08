@@ -1,3 +1,7 @@
+.home {
+  min-height: 60vh; /* make the footer stay at the bottom */
+}
+
 .title {
   text-align: center;
   font-family: 'Playfair Display', serif;

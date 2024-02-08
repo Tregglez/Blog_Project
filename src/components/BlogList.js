@@ -23,15 +23,14 @@ function BlogList({ blogs, title, onDelete }) {
 
   return (
     <div className="blog-list">
-      <h2>{title}</h2>
-      <Link to={'/create'}>
-        <button>Add</button>
-      </Link>
       {blogs.map((blog) => (
         <div className="blog-preview" key={blog.id}>
           <Link to={'/' + blog.id}>
-            <h2>{blog.title}</h2>
-            <FontAwesomeIcon icon={faTrash} onClick={() => handleDelete(blog.id)} />
+            <div className="content-container">
+              <div className="img-container"></div>
+              <h2>{blog.title}</h2>
+              <FontAwesomeIcon icon={faTrash} onClick={() => handleDelete(blog.id)} />
+            </div>
           </Link>
         </div>
       ))}

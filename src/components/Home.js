@@ -38,6 +38,9 @@ function Home() {
           <Link to='/' className="title-link">contact</Link>
         </div>
       </div>
+      <Link to={'/create'}>
+        <button>Add</button>
+      </Link>
       {fetchError && (<p>{fetchError}</p>)}
       {posts && <BlogList blogs={posts} />}
     </div>
