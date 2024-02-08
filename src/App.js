@@ -1,5 +1,6 @@
 import './styles/index.css';
 import Home from './components/Home';
+import Footer from "./components/Footer"
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Create from './components/Create';
 import BlogDetails from './components/BlogDetails';
@@ -34,6 +35,7 @@ function App() {
             </Route>
           </Switch>
         </div>
+       <Footer /> 
       </div>
     </Router>
   );
