@@ -1,0 +1,41 @@
+.footer {
+  text-align: center;
+    padding: 40px 50px; /* Vertical padding and horizontal padding for width */
+  background-color: #ffffff;
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 25px; /* Position from the top of the footer */
+  left: 50%;
+  width: 600px; /* Length of the line */
+  height: 1px; /* Thickness of the line */
+  background-color: #000;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.footer-links {
+  position: relative;
+    display: inline-block;
+  margin-top: 0px; /* Space below the line for the links to sit */
+  z-index: 2;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 0.9em;
+  margin: 0 60px; /* Space between the links */
+  padding: 0px 0; /* Padding to increase tap target size on mobile */
+  font-family: 'Playfair Display', serif; /* Apply the Playfair Display font */
+}
+
+.footer p {
+  color: #808080;
+  font-size: 0.75em;
+  margin-top: 80px; /* Space between the links and the copyright text */
+  z-index: 2;
+}
