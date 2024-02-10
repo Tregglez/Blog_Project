@@ -1,11 +1,12 @@
 import './styles/index.css';
-import Home from './components/Home';
-import Footer from "./components/Footer"
+import Home from './pages/Home';
+import Footer from "./components/Footer";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Create from './components/Create';
+import Create from './pages/Create';
 import BlogDetails from './components/BlogDetails';
 import Login from './components/Login';
 import NotFound from './components/NotFound';
+import TestImg from './components/TestImg';
 
 function App() {
   return (
@@ -22,6 +23,10 @@ function App() {
               <Create />
             </Route>
 
+            <Route path="/test-img">
+              <TestImg />
+            </Route>
+
             <Route path="/:id">
               <BlogDetails />
             </Route>
@@ -35,7 +40,7 @@ function App() {
             </Route>
           </Switch>
         </div>
-       <Footer /> 
+        <Footer />
       </div>
     </Router>
   );

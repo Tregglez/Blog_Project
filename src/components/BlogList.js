@@ -34,7 +34,7 @@ function BlogList({ blogs, title, onDelete }) {
           </Link>
         </div>
       ))}
-    </div >
+    </div>
   );
 }
 

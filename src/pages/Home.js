@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import BlogList from "./BlogList";
+import BlogList from "../components/BlogList";
 import supabase from "../config/supabaseClient";
 import { useEffect, useState } from "react";
+import SmallNav from "../components/SmallNav";
 
 function Home() {
   const [fetchError, setFetchError] = useState(null);
@@ -31,13 +32,7 @@ function Home() {
       <div className="title">
         <h1>The Nourished Notebook</h1>
       </div>
-      <div className="small-nav">
-        <div className="nav-links">
-          <Link to='/' className="title-link">blog</Link>
-          <Link to='/' className="title-link">about</Link>
-          <Link to='/' className="title-link">contact</Link>
-        </div>
-      </div>
+      <SmallNav />
       <Link to={'/create'}>
         <button>Add</button>
       </Link>
