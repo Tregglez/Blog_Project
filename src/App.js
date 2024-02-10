@@ -5,9 +5,9 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Create from './pages/Create';
 import BlogDetails from './components/BlogDetails';
 import Login from './components/Login';
+
 import NotFound from './components/NotFound';
-import TestImg from './components/TestImg';
-import Update from './pages/Update';
+import Layouts from './components/Layouts';
 
 function App() {
   return (
@@ -24,12 +24,8 @@ function App() {
               <Create />
             </Route>
 
-            <Route path="/:id/update">
-              <Update />
-            </Route>
-
-            <Route path="/test-img">
-              <TestImg />
+            <Route path="/layouts/blog">
+              <Layouts />
             </Route>
 
             <Route path="/admin-login/samsara">
@@ -44,10 +40,10 @@ function App() {
               <NotFound />
             </Route>
           </Switch>
-        </div>
+        </div >
         <Footer />
-      </div>
-    </Router>
+      </div >
+    </Router >
   );
 }
 
