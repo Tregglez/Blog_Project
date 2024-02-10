@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Create from './components/Create';
 import BlogDetails from './components/BlogDetails';
 import Login from './components/Login';
+import Layouts from './components/Layouts';
+
 import NotFound from './components/NotFound';
 
 function App() {
@@ -13,27 +15,31 @@ function App() {
       <div className="App">
         {/* <Navbar /> */}
         <div className="content">
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
+         <Switch>
+  <Route exact path="/">
+    <Home />
+  </Route>
 
-            <Route path="/create">
-              <Create />
-            </Route>
+  <Route path="/create">
+    <Create />
+  </Route>
 
-            <Route path="/:id">
-              <BlogDetails />
-            </Route>
+  <Route path="/layouts/blog">
+    <Layouts />
+  </Route>
 
-            <Route path="/admin-login/samsara">
-              <Login />
-            </Route>
+  <Route path="/admin-login/samsara">
+    <Login />
+  </Route>
 
-            <Route path="*">
-              <NotFound />
-            </Route>
-          </Switch>
+  <Route path="/:id">
+    <BlogDetails />
+  </Route>
+
+  <Route path="*">
+    <NotFound />
+  </Route>
+</Switch>
         </div>
        <Footer /> 
       </div>
