@@ -7,6 +7,7 @@ import BlogDetails from './components/BlogDetails';
 import Login from './components/Login';
 import NotFound from './components/NotFound';
 import TestImg from './components/TestImg';
+import Update from './pages/Update';
 
 function App() {
   return (
@@ -23,16 +24,20 @@ function App() {
               <Create />
             </Route>
 
+            <Route path="/:id/update">
+              <Update />
+            </Route>
+
             <Route path="/test-img">
               <TestImg />
             </Route>
 
-            <Route path="/:id">
-              <BlogDetails />
-            </Route>
-
             <Route path="/admin-login/samsara">
               <Login />
+            </Route>
+
+            <Route path="/:id">
+              <BlogDetails />
             </Route>
 
             <Route path="*">

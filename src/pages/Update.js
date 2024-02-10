@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useParams, useHistory } from "react-router-dom";
+import { useEffect, useState } from "react";
 import supabase from "../config/supabaseClient";
-import { useHistory } from "react-router-dom";
 
-function Create() {
+function Update() {
+  const { id } = useParams();
+  const history = useHistory();
+
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
-  const [formError, setFormError] = useState(null);
-  const history = useHistory();
+  const [formError, setFormError] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,7 +20,8 @@ function Create() {
 
     const { data, error } = await supabase
       .from('posts')
-      .insert([{ title, body }])
+      .update([{ title, body }])
+      .eq('id', id)
       .select();
 
     if (error) {
@@ -31,6 +34,27 @@ function Create() {
       history.push('/');
     }
   };
+
+  useEffect(() => {
+    const fetchPost = async () => {
+      const { data, error } = await supabase
+        .from('posts')
+        .select()
+        .eq('id', id)
+        .single();
+
+      if (error) {
+        history.push('/', { replace: true });
+      }
+
+      if (data) {
+        setTitle(data.title);
+        setBody(data.body);
+      }
+    };
+
+    fetchPost();
+  }, [id, history]);
 
   return (
     <div className="create">
@@ -58,4 +82,4 @@ function Create() {
   );
 }
 
-export default Create;
+export default Update;

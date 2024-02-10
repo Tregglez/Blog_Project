@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faTrash, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import supabase from "../config/supabaseClient";
 
 function BlogList({ blogs, title, onDelete }) {
@@ -28,8 +28,15 @@ function BlogList({ blogs, title, onDelete }) {
           <Link to={'/' + blog.id}>
             <div className="content-container">
               <div className="img-container"></div>
-              <h2>{blog.title}</h2>
-              <FontAwesomeIcon icon={faTrash} onClick={() => handleDelete(blog.id)} />
+              <div className="title-container">
+                <h2>{blog.title}</h2>
+                <div className="create-icons">
+                  <FontAwesomeIcon icon={faTrash} onClick={() => handleDelete(blog.id)} />
+                  <Link to={'/' + blog.id + '/update'}>
+                    <FontAwesomeIcon icon={faPenToSquare} />
+                  </Link>
+                </div>
+              </div>
             </div>
           </Link>
         </div>
