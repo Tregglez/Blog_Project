@@ -8,6 +8,7 @@ import Login from './components/Login';
 
 import NotFound from './components/NotFound';
 import Layouts from './components/Layouts';
+import Update from './pages/Update';
 
 function App() {
   return (
@@ -22,6 +23,10 @@ function App() {
 
             <Route path="/create">
               <Create />
+            </Route>
+
+            <Route path="/:id/update">
+              <Update />
             </Route>
 
             <Route path="/layouts/blog">

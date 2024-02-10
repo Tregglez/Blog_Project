@@ -2,9 +2,6 @@ import Layout1 from './Layout1';
 import Layout2 from './Layout2';
 import Layout3 from './Layout3';
 import { Link } from "react-router-dom";
-import BlogList from './BlogList';
-import supabase from "../config/supabaseClient";
-import { useEffect, useState } from "react";
 
 function Layouts() {
   const blogPostProps = {
