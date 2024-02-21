@@ -5,7 +5,7 @@ function SmallNav() {
     <div className="small-nav">
       <div className="nav-links">
         <Link to='/' className="title-link">blog</Link>
-        <Link to='/' className="title-link">about</Link>
+        <Link to='/about' className="title-link">about</Link>
         <Link to='/' className="title-link">contact</Link>
       </div>
     </div>

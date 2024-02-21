@@ -4,7 +4,9 @@
 @import './create.css';
 @import './logins.css';
 @import './footer.css';
+@import './filter.css';
 @import './home.css';
+@import './dashboard-layout.css';
 
 * {
   margin: 0;

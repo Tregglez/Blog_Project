@@ -39,9 +39,11 @@
   font-size: 0.75em;
   margin-top: 80px; /* Space between the links and the copyright text */
   z-index: 2;
+  padding: 0 10px;
 }
 
 .privacy {
   display: flex;
   padding: 5px;
+  justify-content: center;
 }

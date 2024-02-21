@@ -3,8 +3,7 @@ import BlogList from "../components/BlogList";
 import supabase from "../config/supabaseClient";
 import { useEffect, useState } from "react";
 import SmallNav from "../components/SmallNav";
-import { faBookOpen } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Filter from "../components/Filter";
 
 function Home() {
   const [fetchError, setFetchError] = useState(null);
@@ -35,9 +34,9 @@ function Home() {
         <h1>The Nourished Notebook</h1>
       </div>
       <SmallNav />
-      <Link to={'/create'}>
-        <button className="home-button">Add
-          <FontAwesomeIcon icon={faBookOpen}></FontAwesomeIcon>
+      <Filter />
+      <Link to={'/admin-login/samsara'}>
+        <button className="home-button">Login
         </button>
       </Link>
       {fetchError && (<p>{fetchError}</p>)}

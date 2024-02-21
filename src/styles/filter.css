@@ -1,0 +1,17 @@
+.filter-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.filter-box {
+  border-top: 1px solid black;
+  display: flex;
+  justify-content: center;
+}
+
+.filter-box a {
+  text-decoration: none;
+  margin-top: 16px;
+  padding: 0 13px;
+}

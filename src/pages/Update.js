@@ -31,7 +31,7 @@ function Update() {
     if (data) {
       console.log(data);
       setFormError(null);
-      history.push('/');
+      history.push('/admin-secure-dashboard');
     }
   };
 

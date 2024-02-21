@@ -8,6 +8,7 @@ function Create() {
   const [formError, setFormError] = useState(null);
   const history = useHistory();
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -28,7 +29,7 @@ function Create() {
     if (data) {
       console.log(data);
       setFormError(null);
-      history.push('/');
+      history.push('/admin-secure-dashboard');
     }
   };
 

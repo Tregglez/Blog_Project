@@ -1,53 +1,66 @@
 import './styles/index.css';
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { CompatRoute, CompatRouter } from "react-router-dom-v5-compat";
+
+// pages
 import Home from './pages/Home';
 import Footer from "./components/Footer";
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Create from './pages/Create';
 import BlogDetails from './components/BlogDetails';
-import Login from './components/Login';
-
 import NotFound from './components/NotFound';
 import Layouts from './components/Layouts';
 import Update from './pages/Update';
+import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
+import About from './pages/About';
 
 function App() {
   return (
     <Router>
-      <div className="App">
-        {/* <Navbar /> */}
-        <div className="content">
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
+      <CompatRouter>
+        <div className="App">
+          <div className="content">
+            <Switch>
+              <CompatRoute exact path="/">
+                <Home />
+              </CompatRoute>
 
-            <Route path="/create">
-              <Create />
-            </Route>
+              <CompatRoute exact path="/about">
+                <About />
+              </CompatRoute>
 
-            <Route path="/:id/update">
-              <Update />
-            </Route>
+              <CompatRoute path="/create">
+                <Create />
+              </CompatRoute>
 
-            <Route path="/layouts/blog">
-              <Layouts />
-            </Route>
+              <CompatRoute path="/layouts/blog">
+                <Layouts />
+              </CompatRoute>
 
-            <Route path="/admin-login/samsara">
-              <Login />
-            </Route>
+              <CompatRoute path="/admin-login/samsara">
+                <Login />
+              </CompatRoute>
 
-            <Route path="/:id">
-              <BlogDetails />
-            </Route>
+              <CompatRoute path="/admin-secure-dashboard">
+                <Dashboard />
+              </CompatRoute>
 
-            <Route path="*">
-              <NotFound />
-            </Route>
-          </Switch>
+              <CompatRoute path="/:id/update">
+                <Update />
+              </CompatRoute>
+
+              <CompatRoute path="/:id">
+                <BlogDetails />
+              </CompatRoute>
+
+              <CompatRoute path="*">
+                <NotFound />
+              </CompatRoute>
+            </Switch>
+          </div >
+          <Footer />
         </div >
-        <Footer />
-      </div >
+      </CompatRouter>
     </Router >
   );
 }

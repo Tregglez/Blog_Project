@@ -1,0 +1,58 @@
+.dashboard-layout-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 90vw;
+}
+
+.preview {
+  width: 100%;
+  border: solid 2px #22577a;
+  border-radius: 10px;
+  margin: 10px 0;
+  background-color: #C2DFE3;
+  padding: 10px;
+}
+
+.preview a {
+  text-decoration: none;
+}
+
+.posts-for-dashboard {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.create-icons {
+  margin-right: 30px;
+}
+
+.create-icons button {
+  width: 54px;
+  height: 22px;
+  border: none;
+  border-radius: 5px;
+  color: black;
+}
+
+#edit-btn {
+  background-color: #E6AA68;
+  cursor: pointer;
+}
+
+#delete-btn {
+  background-color: #CA3C25;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.sign-out-btn {
+  border: none;
+  border-radius: 10px;
+  width: 75px;
+  height: 26px;
+  background-color: #22577a;
+  color: white;
+  cursor: pointer;
+}

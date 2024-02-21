@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import supabase from "../config/supabaseClient";
 
-function BlogList({ blogs, title, onDelete }) {
+function BlogList({ blogs, onDelete }) {
 
   const handleDelete = async (id) => { // Modified to accept ID
     const { data, error } = await supabase
